@@ -1,0 +1,756 @@
+/* General Styles - Minimalist Dark Theme */
+
+@font-face {
+    font-family: 'test'; /* یک نام دلخواه برای فونت شما */
+    src: url('./Lalezar-Regular.ttf') format('woff2'), /* مسیر فایل فونت */
+         url('./Lalezar-Regular.ttf') format('woff'); /* مسیر فایل فونت برای سازگاری بیشتر */
+    font-weight: normal; /* یا bold، light و ... بسته به نوع فونت */
+    font-style: normal;
+    font-display: swap; /* برای بهبود بارگذاری فونت */
+}
+
+@font-face {
+    font-family: 'test'; /* همان نام دلخواه */
+    src: url('./Lalezar-Regular.ttf') format('woff2'),
+         url('./Lalezar-Regular.ttf') format('woff');
+    font-weight: bold; /* اگر نسخه Bold فونت را دارید */
+    font-style: normal;
+    font-display: swap;
+}
+
+
+:root {
+    --primary-color: #4CAF50; /* A fresh, vibrant green */
+    --secondary-color: #388E3C; /* A deeper green for accents/hover */
+    --text-color: #E0E0E0; /* Light grey for primary text */
+    --bg-light: #2C2C2C; /* Dark grey for alternating sections and card backgrounds */
+    --body-bg: #1A1A1A; /* Very dark grey, almost black for overall background */
+    --border-radius: 8px;
+    --shadow: 0 4px 10px rgba(0,0,0,0.4); /* Stronger shadow for depth */
+    --hover-effect: translateY(-5px); /* Consistent subtle lift on hover */
+    --transition-speed: 0.3s ease; /* Standard transition speed */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'test', sans-serif;
+    line-height: 1.7; /* Improved readability */
+    color: var(--text-color);
+    background: var(--body-bg);
+    direction: rtl; /* For Right-to-Left language */
+    text-align: right; /* For Right-to-Left language */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.container {
+    max-width: 1100px; /* Slightly narrower container for cleaner look */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color var(--transition-speed);
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3 {
+    font-family: 'test', sans-serif;
+    color: var(--primary-color); /* Headings stand out with primary color */
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 3.8em;
+}
+
+h2 {
+    font-size: 2.5em;
+    text-align: center; /* Center section headings */
+}
+
+h3 {
+    font-size: 1.6em;
+}
+
+section {
+    padding: 80px 0; /* Generous vertical padding */
+    position: relative; /* For potential animations/overlays */
+}
+
+/* Button Styling */
+.btn-primary {
+    display: inline-block;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 14px 30px;
+    border-radius: var(--border-radius);
+    transition: background var(--transition-speed), transform 0.2s ease, box-shadow var(--transition-speed);
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    box-shadow: var(--shadow);
+}
+
+.btn-primary:hover {
+    background: var(--secondary-color);
+    transform: var(--hover-effect);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.6);
+}
+
+/* Header */
+.main-header {
+    background: var(--bg-light);
+    padding: 15px 0;
+    border-bottom: 1px solid #3a3a3a;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-header .logo a {
+    font-family: 'test', sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.main-nav ul {
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-right: 35px; /* Increased spacing */
+}
+
+.main-nav ul li:last-child {
+    margin-right: 0;
+}
+
+.main-nav ul li a {
+    color: var(--text-color);
+    font-weight: 400; /* Lighter font weight for minimalist feel */
+    padding: 8px 0;
+    position: relative;
+    font-size: 1.05em;
+}
+
+.main-nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    right: 0; /* For RTL */
+    width: 0%;
+    height: 2px; /* Thinner underline */
+    background-color: var(--primary-color);
+    transition: width var(--transition-speed);
+}
+
+.main-nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* New: Date and Time Display */
+#datetime-display {
+    background: var(--secondary-color); /* Darker green background */
+    color: #fff;
+    padding: 8px 0;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: var(--shadow);
+}
+
+#current-datetime {
+    font-size: 20px;
+    font-weight: 500;
+    direction: rtl; /* Ensure correct text direction */
+}
+
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://via.placeholder.com/1920x800/1A1A1A/4CAF50?text=Modern+Service+Background') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 160px 20px; /* More vertical padding */
+    min-height: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-section h1 {
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+
+.hero-section p {
+    font-size: 1.4em;
+    margin-bottom: 50px;
+    max-width: 700px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* Services Section */
+.services-section {
+    background: var(--body-bg);
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-item {
+    background: var(--bg-light);
+    padding: 35px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    text-align: center;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer; /* Now clickable to open modal */
+    border: 1px solid #3a3a3a; /* Subtle border */
+}
+
+.service-item:hover {
+    transform: var(--hover-effect);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.6);
+}
+
+.service-item .service-icon {
+    font-size: 4em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    transition: transform var(--transition-speed);
+}
+
+.service-item:hover .service-icon {
+    transform: scale(1.1); /* Simple scale on hover */
+}
+
+.service-item h3 {
+    color: var(--primary-color);
+    font-size: 1.5em;
+    margin-bottom: 10px; /* Reduced margin, as description is in modal */
+}
+
+/* Modal Styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1001; /* Above header */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8); /* Darker, more prominent overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+}
+
+body.modal-open {
+    overflow: hidden; /* Prevent scrolling background when modal is open */
+}
+
+.modal-content {
+    background-color: var(--bg-light);
+    color: var(--text-color);
+    padding: 40px; /* More padding */
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7); /* Stronger shadow for pop-out effect */
+    width: 90%;
+    max-width: 700px; /* Max width */
+    position: relative;
+    animation: fadeInScale 0.3s ease-out; /* New animation */
+    text-align: center;
+    border: 1px solid var(--primary-color); /* Border to match theme */
+}
+
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.9) translateY(-20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.modal-content img {
+    max-width: 100%;
+    height: 280px; /* Slightly taller image */
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.modal-content h3 {
+    font-size: 2em; /* Larger title */
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.modal-content p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    color: #c0c0c0; /* Slightly lighter text */
+}
+
+.modal-content .close-button {
+    color: #aaa; /* Softer close button color */
+    position: absolute;
+    top: 15px;
+    left: 20px; /* Adjust for RTL */
+    font-size: 2.8em; /* Larger close button */
+    font-weight: 300; /* Lighter weight */
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.modal-content .close-button:hover,
+.modal-content .close-button:focus {
+    color: var(--primary-color);
+}
+
+.modal-contact-btn {
+    margin-top: 20px;
+}
+
+/* Testimonials Section - Compacted */
+.testimonials-section {
+    text-align: center;
+    background: var(--bg-light); /* Alternating section background */
+    padding-bottom: 60px; /* Reduce padding to make it smaller */
+}
+
+.testimonials-section h2 {
+    margin-bottom: 30px;
+}
+
+.testimonial-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    margin-bottom: 0; /* Remove bottom margin */
+    padding-bottom: 15px; /* For scrollbar visibility */
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) #444;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start; /* Align items to start */
+    align-items: stretch; /* Ensure equal height */
+}
+
+.testimonial-carousel::-webkit-scrollbar {
+    height: 8px; /* Thinner scrollbar */
+}
+
+.testimonial-carousel::-webkit-scrollbar-track {
+    background: #444;
+    border-radius: 10px;
+}
+
+.testimonial-carousel::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+
+.testimonial-carousel::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
+
+.testimonial-item {
+    flex: 0 0 45%; /* Show more items at once */
+    min-width: 300px; /* Minimum width for each item */
+    background: var(--body-bg);
+    padding: 25px; /* Reduced padding */
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin: 0 15px; /* Reduced margin */
+    scroll-snap-align: start; /* Snap to start of item */
+    border-right: 4px solid var(--primary-color); /* Thinner accent */
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.testimonial-item p {
+    font-style: italic;
+    margin-bottom: 15px; /* Reduced margin */
+    font-size: 0.95em; /* Smaller font size */
+    line-height: 1.6;
+    color: #c0c0c0;
+}
+
+.testimonial-item h4 {
+    color: var(--primary-color);
+    font-size: 1em; /* Smaller font size */
+    font-weight: bold;
+    text-align: left; /* Align name to left within card for RTL */
+    margin-top: auto; /* Push name to bottom if content varies */
+}
+
+/* About Section */
+.about-section {
+    text-align: center;
+    background: var(--body-bg); /* Use body background for continuity */
+}
+
+.about-section p {
+    font-size: 1.1em;
+    line-height: 1.9;
+    max-width: 900px;
+    margin: 0 auto 25px auto;
+    color: var(--text-color);
+}
+
+/* Contact Section */
+.contact-section {
+    text-align: center;
+    background: var(--bg-light); /* Alternating section background */
+}
+
+.contact-section p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.contact-section p i {
+    margin-left: 10px;
+    color: var(--primary-color);
+    font-size: 1.2em;
+}
+
+.contact-form {
+    background: var(--body-bg); /* Darker background for form */
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    max-width: 600px;
+    margin: 40px auto 0 auto;
+    text-align: right;
+    border: 1px solid #3a3a3a;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #555;
+    background-color: #333;
+    color: var(--text-color);
+    border-radius: var(--border-radius);
+    font-size: 1em;
+    direction: rtl;
+    text-align: right;
+    outline: none;
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.3);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* Footer */
+.main-footer {
+    background: var(--secondary-color);
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 60px;
+    font-size: 0.9em;
+    border-top: 4px solid var(--primary-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    h1 { font-size: 3em; }
+    h2 { font-size: 2em; }
+    .main-nav ul li { margin-right: 25px; }
+    .hero-section { padding: 120px 20px; min-height: 550px; }
+    .hero-section p { font-size: 1.2em; }
+    .service-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+    .modal-content { padding: 30px; }
+    .modal-content img { height: 220px; }
+    .testimonial-item { flex: 0 0 48%; } /* Adjust for 2 columns on tablet */
+}
+
+@media (max-width: 768px) {
+    .main-header .container { flex-direction: column; text-align: center; }
+    .main-nav ul { margin-top: 15px; flex-wrap: wrap; justify-content: center; }
+    .main-nav ul li { margin: 0 10px 10px 10px; }
+    .hero-section { padding: 100px 20px; min-height: 480px; }
+    h1 { font-size: 2.5em; }
+    h2 { font-size: 1.8em; }
+    h3 { font-size: 1.4em; }
+    .hero-section p { font-size: 1em; }
+    .service-grid { grid-template-columns: 1fr; } /* Single column on small screens */
+    .modal-content { max-width: 95%; padding: 25px; }
+    .modal-content img { height: 180px; }
+    .modal-content h3 { font-size: 1.8em; }
+    .modal-content p { font-size: 1em; }
+    .btn-primary { padding: 12px 25px; font-size: 1em; }
+    section { padding: 60px 0; }
+    .contact-form, .about-section p { max-width: 95%; }
+    .testimonial-item { flex: 0 0 90%; } /* Single column on smaller screens */
+    #datetime-display { font-size: 0.8em; }
+}
+
+@media (max-width: 480px) {
+    .main-header .logo a { font-size: 1.8em; }
+    .main-nav ul li a { font-size: 0.9em; }
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.6em; }
+    h3 { font-size: 1.2em; }
+    .hero-section p { font-size: 0.9em; }
+    .btn-primary { padding: 10px 20px; font-size: 0.9em; }
+    .service-item .service-icon { font-size: 3.5em; }
+    .modal-content h3 { font-size: 1.6em; }
+    .modal-content p { font-size: 0.9em; }
+    .modal-content .close-button { font-size: 2.2em; top: 10px; left: 15px; }
+    .contact-form input, .contact-form textarea { padding: 12px; font-size: 0.9em; }
+}
+
+
+/* Instagram Icon Styling */
+.social-icon-link {
+    display: inline-flex; /* برای اینکه متن و آیکون کنار هم باشند */
+    align-items: center;
+    color: var(--text-color); /* رنگ متن لینک مثل بقیه متن ها */
+    margin-bottom: 20px; /* فاصله از آیتم بعدی */
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.social-icon-link:hover {
+    color: var(--primary-color); /* تغییر رنگ لینک در هاور */
+}
+
+.social-icon {
+    font-size: 1.5em; /* اندازه بزرگتر برای آیکون */
+    margin-left: 10px; /* فاصله از متن (برای RTL) */
+    color: var(--primary-color); /* رنگ آیکون */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon-link:hover .social-icon {
+    color: var(--secondary-color); /* تغییر رنگ آیکون در هاور */
+    transform: scale(1.1); /* کمی بزرگ شدن آیکون در هاور */
+}
+
+/* Specific Instagram color for a touch of branding, if desired */
+/* اگر خواستید آیکون اینستاگرام یک رنگ خاص (برند اینستاگرام) داشته باشد
+.instagram-icon {
+    color: #E1306C; 
+}
+.social-icon-link:hover .instagram-icon {
+    color: #C13584; 
+}
+*/
+
+
+
+/* Stats Section Styling */
+.stats-section {
+    background: linear-gradient(rgba(30, 144, 255, 0.8), rgba(30, 144, 255, 0.8)), url('https://via.placeholder.com/1920x400/2980b9/FFFFFF?text=Blue+Bubbles+Background') no-repeat center center/cover;
+    background-blend-mode: overlay; /* برای ترکیب بهتر گرادینت و تصویر */
+    color: #fff;
+    padding: 60px 0; /* padding for the section */
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Ensure bubbles don't overflow */
+}
+
+/* Optional: Add a subtle bubble-like pattern background */
+.stats-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at 10% 20%, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 50%, rgba(255,255,255,0.0) 100%);
+    background-size: 150px 150px;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+.stats-section .container {
+    position: relative;
+    z-index: 2; /* Ensure content is above background effects */
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* 4 columns on large screens */
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.stat-item {
+    background: rgba(0, 0, 0, 0.3); /* Slightly transparent dark background for items */
+    padding: 30px 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 180px; /* Ensure consistent height */
+    transition: transform 0.3s ease, background 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle white border */
+}
+
+.stat-item:hover {
+    transform: translateY(-8px);
+    background: rgba(0, 0, 0, 0.45); /* Darker on hover */
+}
+
+.stat-icon {
+    font-size: 3.5em; /* Large icons */
+    color: #fff; /* White icons */
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+
+.stat-number {
+    font-family: 'Estedad', sans-serif; /* Use Estedad for numbers */
+    font-size: 2.8em; /* Very large numbers */
+    font-weight: bold;
+    color: #fff; /* White numbers */
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.stat-text {
+    font-size: 1.1em;
+    color: #f0f0f0; /* Slightly lighter white for text */
+    opacity: 0.9;
+    line-height: 1.4;
+}
+
+/* Responsive Adjustments for Stats Section */
+@media (max-width: 992px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    }
+    .stat-number {
+        font-size: 2.5em;
+    }
+    .stat-icon {
+        font-size: 3em;
+    }
+}
+
+@media (max-width: 600px) {
+    .stats-grid {
+        grid-template-columns: 1fr; /* Single column on small mobiles */
+    }
+    .stat-item {
+        min-height: 160px;
+        padding: 25px 15px;
+    }
+    .stat-number {
+        font-size: 2.2em;
+    }
+    .stat-icon {
+        font-size: 2.8em;
+    }
+    .stat-text {
+        font-size: 1em;
+    }
+    .stats-section {
+        padding: 40px 0;
+    }
+}
+
+
+/* Floating Call Button Styling */
+.floating-call-btn {
+    position: fixed; /* دکمه را در موقعیت ثابت روی صفحه نگه می‌دارد */
+    bottom: 30px; /* فاصله از پایین صفحه */
+    left: 30px; /* فاصله از سمت چپ صفحه (برای RTL) */
+    /* اگر میخواهید سمت راست باشد، left را به right تغییر دهید */
+    /* right: 30px; */
+    background-color: var(--primary-color); /* رنگ پس‌زمینه دکمه */
+    color: #fff; /* رنگ آیکون داخل دکمه */
+    width: 60px; /* عرض دکمه */
+    height: 60px; /* ارتفاع دکمه */
+    border-radius: 50%; /* دکمه را دایره‌ای می‌کند */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8em; /* اندازه آیکون */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4); /* سایه برای برجسته‌سازی */
+    z-index: 9999; /* مطمئن می‌شود که دکمه روی همه عناصر دیگر قرار می‌گیرد */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.floating-call-btn:hover {
+    background-color: var(--secondary-color); /* تغییر رنگ در هاور */
+    transform: scale(1.1) translateY(-3px); /* کمی بزرگ شدن و بالا آمدن در هاور */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.6); /* سایه بیشتر در هاور */
+}
+
+/* Responsive adjustments for the floating button */
+@media (max-width: 768px) {
+    .floating-call-btn {
+        width: 55px;
+        height: 55px;
+        font-size: 1.6em;
+        bottom: 20px;
+        left: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-call-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.4em;
+        bottom: 15px;
+        left: 15px;
+    }
+}

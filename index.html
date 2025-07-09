@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کاخ اندیشان زرنگار - خدمات منزل و اداری</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Estedad:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="#">کاخ اندیشان زرنگار</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#home">صفحه اصلی</a></li>
+                    <li><a href="#services">خدمات</a></li>
+                    <li><a href="#testimonials">نظرات</a></li>
+                    <li><a href="#about">درباره ما</a></li>
+                    <li><a href="#contact">تماس با ما</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div id="datetime-display">
+        <div class="container">
+            <span id="current-datetime"></span>
+        </div>
+    </div>
+
+    <section id="home" class="hero-section">
+        <div class="container">
+            <h1>به کاخ اندیشان زرنگار خوش آمدید</h1>
+            <p>ارائه دهنده خدمات منزل و اداری با بالاترین کیفیت و رضایت شما</p>
+            <a href="#services" class="btn-primary">مشاهده خدمات</a>
+        </div>
+    </section>
+
+    <section id="services" class="services-section container">
+        <h2>خدمات ما</h2>
+        <div class="service-grid">
+            <div class="service-item" data-service="moblshooyi">
+                <i class="fas fa-couch service-icon"></i>
+                <h3>مبل شویی و تشک شویی</h3>
+            </div>
+            <div class="service-item" data-service="nazafatmanzel">
+                <i class="fas fa-broom service-icon"></i>
+                <h3>نظافت کامل منزل و ارگان‌ها</h3>
+            </div>
+            <div class="service-item" data-service="rahpelle">
+                <i class="fas fa-stairs service-icon"></i>
+                <h3>نظافت راه پله</h3>
+            </div>
+            <div class="service-item" data-service="nanonama">
+                <i class="fas fa-spray-can service-icon"></i>
+                <h3>نانو شویی و نما شویی</h3>
+            </div>
+            <div class="service-item" data-service="kafsabi">
+                <i class="fas fa-brush service-icon"></i>
+                <h3>کف سابی</h3>
+            </div>
+            <div class="service-item" data-service="takhribbazsazi">
+                <i class="fas fa-hammer service-icon"></i>
+                <h3>تخریب و بازسازی</h3>
+            </div>
+            <div class="service-item" data-service="asbbar">
+                <i class="fas fa-truck-moving service-icon"></i>
+                <h3>اسباب کشی و باربری</h3>
+            </div>
+            <div class="service-item" data-service="sampashi">
+                <i class="fas fa-bug service-icon"></i>
+                <h3>سم پاشی</h3>
+            </div>
+            <div class="service-item" data-service="paziraei">
+                <i class="fas fa-champagne-glasses service-icon"></i>
+                <h3>پذیرایی در مراسمات</h3>
+            </div>
+            <div class="service-item" data-service="bastabandi">
+                <i class="fas fa-box-open service-icon"></i>
+                <h3>بسته‌بندی و چیدمان</h3>
+            </div>
+            <div class="service-item" data-service="parastar">
+                <i class="fas fa-hand-holding-heart service-icon"></i>
+                <h3>پرستار نوزاد، کودک، سالمند</h3>
+            </div>
+            <div class="service-item" data-service="amlak">
+                <i class="fas fa-building service-icon"></i>
+                <h3>املاک و رهن و اجاره</h3>
+            </div>
+        </div>
+
+        <div id="serviceDetailModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h3 id="modalServiceTitle"></h3>
+                <img id="modalServiceImage" src="./logo.png" alt="Service Image">
+                <p id="modalServiceDescription"></p>
+                <a href="#contact" class="btn-primary modal-contact-btn"> تماس با ما </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <h2>نظرات کاربران</h2>
+            <div class="testimonial-carousel">
+                <div class="testimonial-item">
+                    <p>"خدمات مبل شویی عالی بود! تیم شما بسیار حرفه‌ای عمل کردند."</p>
+                    <h4>- امیر نوری</h4>
+                </div>
+                <div class="testimonial-item">
+                    <p>"نظافت منزل بی‌نقص بود، بسیار از کار شما راضی هستم."</p>
+                    <h4>- محمد رضایی</h4>
+                </div>
+                <div class="testimonial-item">
+                    <p>"اسباب کشی بدون دردسر انجام شد، ممنون از زحمات شما."</p>
+                    <h4>- user 1</h4>
+                </div>
+                <div class="testimonial-item">
+                    <p>"واقعا از نظافت راه پله راضی بودیم، همه چیز عالی بود."</p>
+                    <h4>-  حسینی</h4>
+                </div>
+                <div class="testimonial-item">
+                    <p>"کف سابی حرفه‌ای و فوق العاده، کف‌ها مثل روز اول شدند."</p>
+                    <h4>- n.ghasemi</h4>
+                </div>
+                <div class="testimonial-item">
+                    <p>"پرسنل پذیرایی در مراسم ما، نهایت ادب و مهارت را داشتند."</p>
+                    <h4>- رضا مرادی</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section container">
+        <h2>درباره ما</h2>
+        <p>کاخ اندیشان زرنگار با سال‌ها تجربه در زمینه ارائه خدمات متنوع منزل و اداری، همواره تلاش کرده است تا با تکیه بر **تیم مجرب و متعهد** خود، بهترین کیفیت را به مشتریان گرامی ارائه دهد. ما معتقدیم که هر خانه و محیط کاری شایسته بهترین مراقبت است. هدف اصلی ما، **جلب رضایت کامل شما** با ارائه خدماتی دقیق، سریع و با استفاده از **جدیدترین متدها و مواد دوستدار محیط زیست** است.</p>
+        <p>از نظافت تخصصی و مبل‌شویی گرفته تا اسباب‌کشی و اعزام پرستار، در هر قدم همراه شما هستیم تا زندگی را برایتان آسان‌تر و دلپذیرتر کنیم. اعتماد شما بزرگترین سرمایه ماست.</p>
+    </section>
+
+
+
+
+    <section id="stats" class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <i class="fas fa-users stat-icon"></i>
+                    <h3 class="stat-number">8543</h3>
+                    <p class="stat-text">مشتریان راضی</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-building stat-icon"></i>
+                    <h3 class="stat-number">1864</h3>
+                    <p class="stat-text">ساختمان‌های نظافت شده</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-person stat-icon"></i> <h3 class="stat-number">361</h3>
+                    <p class="stat-text">تعداد نیروهای خانم و آقا</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-landmark stat-icon"></i> <h3 class="stat-number">2</h3>
+                    <p class="stat-text">تعداد شعب ما</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>تماس با ما</h2>
+            <p> برای مشاوره رایگان و ثبت سفارش با ما در تماس باشید:(پشتیبانی 24 ساعته)</p>
+
+            <p><i class="fas fa-mobile-alt"></i> manager phone (همراه مدیریت) : 
+            09120917245 </p>
+            
+            <p><i class="fas fa-phone"></i> تلفن 1:  08432221511</p>
+            <p><i class="fas fa-phone"></i> تلفن 2: 1436-084333341428</p>
+            
+            <p><i class="fas fa-mobile-alt"></i> phone (همراه) : 09916684161-09183405788-09916684151</p>
+            <p><i class="fas fa-envelope"></i> ایمیل: taherisaeed760@gmail.com</p>
+            <p><i class="fas fa-map-marker-alt"></i> 
+            ادرس  :  شعبه اول : میدان کشوری ، بلوار بهشتی ، جنب اداره امور عشایری و بیمه اسیا 
+شعبه دوم : 
+ایلام ، خیابان پاسداران ، کوچه مبارک</p>
+<br>
+<p><a href="https://www.instagram.com/zarnegar.kakh/" target="_blank" class="social-icon-link"><i class="fab fa-instagram social-icon instagram-icon"></i> اینستاگرام ما</a></p>
+            
+
+<br>
+<p>انتقاد یا  پیشنهاد جهت بهبود کارمون :</p>
+            <form class="contact-form">
+                <input type="text" placeholder="نام" required>
+                <input type="email" placeholder="ایمیل" required>
+                <input type="tel" placeholder="شماره تماس (اختیاری)">
+                <textarea placeholder="پیام شما..." required></textarea>
+                <button type="submit" class="btn-primary">ارسال پیام</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 کاخ اندیشان زرنگار. تمامی حقوق محفوظ است.</p>
+        </div>
+    </footer>
+
+
+
+
+    <a href="tel:+989120917245" class="floating-call-btn" title="تماس مستقیم با مدیریت">
+        <i class="fas fa-phone-alt"></i>
+    </a>
+
+    <script src="./script.js"></script>
+</body>
+</html>
+
+    <script src="./script.js"></script>
+</body>
+</html>
